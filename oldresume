@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professional Profile</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+   .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;*/
+    }
+    .profile {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .profile img {
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+    }
+    .contact-info {
+      margin-bottom: 20px;
+    }
+    .section {
+      margin-bottom: 20px;
+    }
+    .section h2 {
+      margin-bottom: 10px;
+    }
+    .section ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    .skills li {
+      display: inline-block;
+      background-color: #f4f4f4;
+      padding: 5px 10px;
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="profile">
+      <img src="headshot.png" alt="Sai Abhishek's headshot">
+      <h1>Sai Abhishek Avusula</h1>
+    </div>
+    <div class="contact-info">
+      <p>Email: avusulsk@mail.uc.edu</p>
+      <p>Phone: +1 513-462-8555</p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/sai-abhishek-avusula-7570301b0/">LinkedIn Profile</a></p>
+    </div>
+    <div class="section">
+      <h2>Background</h2>
+      <p>Passionate IT graduate pursuing a Masters at the University of Cincinnati and concurrently serving as a Teaching Assistant. My professional journey includes valuable experience in web development at Virtusa. Eager to embark on new challenges, I am actively seeking internships to further enhance my skills and contribute to innovative projects.</p>
+    </div>
+    <div class="section">
+      <h2>Education</h2>
+      <ul>
+        <li><b>Master of science in Information Technology</b><p align= "left">University of Cincinnati</p><p align="right">(Aug 2023-present)</p></li>
+        <li><b>Bachelour of Technology in Information Technology</b><p align= "left">Guru Nanak Institution Technical Campus</p><p align="right">(Jul 2018-Jul 2022)</p></li>
+       
+      </ul>
+    </div>
+    <div class="section">
+      <h2>Experience</h2>
+      <ul>
+        <li><b>Teaching Assistant</b><p align= "left">University of Cincinnati</p><p align="right">(Aug 2023-present)</p></li>
+        <li><b>Associate Enginner-Java Technology</b><p align= "left">Guru Nanak Institution Technical Campus</p><p align="right">(Jun 2022-Jul 2023)</p></li>
+       
+      </ul>
+    </div>
+    <div class="section">
+      <h2>Skills</h2>
+      <ul class="skills">
+        <li>Java</li>
+        <li>C</li>
+        <li>HTML</li>
+        <li>React js</li>
+        <li>MySQL</li>
+        <li>JavaScript</li>
+       
+      </ul>
+    </div>
+    <div class="section">
+      <h2>Awards & Honors</h2>
+      <ul>
+        <li><b>Academic Achievement Award</b><p align= "left">University of Cincinnati</p><p align="right">(Oct 2023)</p></li>
+      </ul>
+    </div>
+  </div>
+  <center>
+     <p>To know more about the WAPH-course Click here:<a href="https://avusulsk.github.io/waph.html">https://avusulsk.github.io/waph.html</a></p>
+  </center>
+
+</body>
+</html>
+
