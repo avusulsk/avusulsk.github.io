@@ -40,7 +40,7 @@
 </script>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <style>
-        #weather-info {
+        /*#weather-info {
             z-index: 1;
             text-align: center;
             padding: 20px;
@@ -53,10 +53,22 @@
             height: 100%;
             z-index: -1;
         }*/
-        #moving-icons {
+        /*#moving-icons {
             width: 400px;
             height: 200px;
-            z-index: -2;
+            z-index: -2;*/
+
+            #moving-icons {
+            position: relative; /* Set position to relative */
+        }
+
+        #weather-container {
+            position: absolute; /* Set position to absolute */
+            top: 20px; /* Adjust top position as needed */
+            left: 20px; /* Adjust left position as needed */
+            z-index: 999; /* Set a higher z-index to ensure it's on top */
+            color: #2e3028;
+
         }
     </style>
 
