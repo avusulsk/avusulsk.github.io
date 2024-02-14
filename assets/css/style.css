@@ -1059,3 +1059,7 @@ textarea.input-field {
 .completed {
     text-decoration: line-through;
 }
+#app input[type="text"] {
+            border: 1px solid black; /* Add black border to the input */
+            padding: 5px; /* Add some padding for better appearance */
+        }
