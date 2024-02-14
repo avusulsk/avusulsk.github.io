@@ -44,8 +44,7 @@
             z-index: 1;
             text-align: center;
             padding: 20px;
-             
-        }
+        
       /*  #background {
             position: fixed;
             top: 0;
@@ -733,7 +732,7 @@
                   }
 
                   // Refresh moving icons every 5 seconds
-                  setInterval(drawMovingIcons, 5000);
+                  setInterval(drawMovingIcons, 2000);
 
                   // Fetch weather when page loads and draw initial moving icons
                   window.onload = function() {
@@ -742,6 +741,31 @@
                   };
                   </script>
 
+                  <div id="weather-container" style="color: #2e3028; margin-top: 20px;">
+                    <!-- Weather information will be displayed here -->
+       </div>
+       <script>
+                    $(document).ready(function() {
+                      // Weatherbit API key (replace with your own key)
+                      var apiKey = '75a7d29206c540778528c51907aaa949';
+        
+                      // Specify the city and country for weather information
+                      var city = 'Cincinnati';
+                      var country = 'United states';
+        
+                      // Make a request to Weatherbit API
+                      $.get("https://api.weatherbit.io/v2.0/current?key=" + apiKey + "&city=" + city + "&country=" + country,
+                        function(result) {
+                          console.log("Weather API response: " + JSON.stringify(result));
+        
+                          // Display weather information
+                          var weatherInfo = "Current temperature in my  " + city + ": " + result.data[0].temp + "°C";
+                          $("#weather-container").html(weatherInfo);
+                        }
+                      );
+                    });
+        </script>   
+        
                     </li>
                     
           </ul>
