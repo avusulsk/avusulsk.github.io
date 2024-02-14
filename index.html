@@ -646,68 +646,34 @@
 
                     <li>
                       <h2>Integrate a public API with graphics:</h2>
-                    <canvas id="backgroundd" width="400" height="100"></canvas>
-
-                   
-
+                     
                     <canvas id="moving-iconss" width="400" height="100"></canvas>
-                     <div id="weather-info">
-                     <!-- Weather information will be displayed here -->
-                     </div>
-
-                    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
                     <script>
-                     // Function to fetch weather data from Weatherbit API
-                    // function fetchWeather() {
-                    //     const apiKey = '75a7d29206c540778528c51907aaa949';
-                    //     const city = 'New York'; // Example city, you can change it to any city you want
-                    //     const apiUrl = `https://api.weatherbit.io/v2.0/current?city=${city}&key=${apiKey}`;
+                    // Function to fetch weather data from Weatherbit API
+                      function fetchWeather() {
+                          const apiKey = '75a7d29206c540778528c51907aaa949';
+                          const city = 'New York'; // Example city, you can change it to any city you want
+                          const apiUrl = `https://api.weatherbit.io/v2.0/current?city=${city}&key=${apiKey}`;
 
-                    //     axios.get(apiUrl)
-                    //         .then(response => {
-                    //             const weatherData = response.data.data[0];
-                    //             const weatherInfoo = `
-                    //                 <h2>${weatherData.city_name} Weather</h2>
-                    //                 <p>Temperature: ${weatherData.temp}&deg;C</p>
-                    //                 <p>Description: ${weatherData.weather.description}</p>
-                    //             `;
-                    //             document.getElementById('weather-infoo').innerHTML = weatherInfoo;
-                    //         })
-                    //         .catch(error => {
-                    //             console.error('Error fetching weather data:', error);
-                    //         });
-                    // }
-                      // Function to fetch weather data from OpenWeatherMap API
-                    function fetchWeather() {
-                        const apiKey = 'e577ee321c10eac58b4482a391c85c0f';
-                        const city = 'New York'; // Example city, you can change it to any city you want
-                        const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+                          axios.get(apiUrl)
+                              .then(response => {
+                                  const weatherData = response.data.data[0];
+                                  const weatherInfo = `
+                                      <h2>${weatherData.city_name} Weather</h2>
+                                      <p>Temperature: ${weatherData.temp}&deg;C</p>
+                                      <p>Description: ${weatherData.weather.description}</p>
+                                  `;
+                                  document.getElementById('weather-info').innerHTML = weatherInfo;
+                              })
+                              .catch(error => {
+                                  console.error('Error fetching weather data:', error);
+                              });
+                      }
 
-                        fetch(apiUrl)
-                            .then(response => {
-                                if (!response.ok) {
-                                    throw new Error('Network response was not ok');
-                                }
-                                return response.json();
-                            })
-                            .then(data => {
-                                const weatherInfo = `
-                                    <h2>${data.name} Weather</h2>
-                                    <p>Temperature: ${data.main.temp}°C</p>
-                                    <p>Description: ${data.weather[0].description}</p>
-                                `;
-                                document.getElementById('weather-info').innerHTML = weatherInfo;
-                            })
-                            .catch(error => {
-                                console.error('Error fetching weather data:', error);
-                                document.getElementById('weather-info').innerHTML = 'Error fetching weather data';
-                            });
-                    }
-
-                    // Fetch weather when page loads
-                    window.onload = function() {
-                        fetchWeather();
-                    };
+                      // Fetch weather when page loads
+                      window.onload = function() {
+                          fetchWeather();
+                      };
 
 
                     // Draw weather-related icons on the moving-icons canvas
@@ -746,11 +712,45 @@
 
                     // Fetch weather when page loads and draw initial moving icons
                     window.onload = function() {
-                        fetchWeather();
+                        //fetchWeather();
                         drawMovingIcons();
                     };
  
                     </script>
+                    </li>
+                    <li>
+                      <div id="weather-info">
+                     <!-- Weather information will be displayed here -->
+                     </div>
+                     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+                     <script type="text/javascript">
+                       // Function to fetch weather data from Weatherbit API
+                      function fetchWeather() {
+                          const apiKey = '75a7d29206c540778528c51907aaa949';
+                          const city = 'New York'; // Example city, you can change it to any city you want
+                          const apiUrl = `https://api.weatherbit.io/v2.0/current?city=${city}&key=${apiKey}`;
+
+                          axios.get(apiUrl)
+                              .then(response => {
+                                  const weatherData = response.data.data[0];
+                                  const weatherInfo = `
+                                      <h2>${weatherData.city_name} Weather</h2>
+                                      <p>Temperature: ${weatherData.temp}&deg;C</p>
+                                      <p>Description: ${weatherData.weather.description}</p>
+                                  `;
+                                  document.getElementById('weather-info').innerHTML = weatherInfo;
+                              })
+                              .catch(error => {
+                                  console.error('Error fetching weather data:', error);
+                              });
+                      }
+
+                      // Fetch weather when page loads
+                      window.onload = function() {
+                          fetchWeather();
+                         };
+                     </script>
+
                     </li>
                     
           </ul>
