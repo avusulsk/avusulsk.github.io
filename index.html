@@ -573,17 +573,11 @@
 
              <!-- <div id="joke-container"></div> -->
             <script type="text/javascript">
-                  $.get("https://v2.jokeapi.dev/joke/Programming?type=single",
-                  function(result){
-                    console.log("From jokeAPI: "+ JSON.stringify(result));
-                    $("#response").html("A Programming joke of the day:" +result.joke);
-                      if(result && result.joke){
-                var encodedJoke = encodeInput(result.joke); 
-                    $("#response").text("Programming Joke of the day: "+encodedJoke);
-                  }else{
-                    $("#response").text("unable to retrive joke now sorry!!");
-                  }
-                })
+                    $.get("https://v2.jokeapi.dev/joke/Programming?type=single",
+                    function(result){
+                      console.log("From jokeAPI: "+ JSON.stringify(result));
+                      $("#response").html("A Programming joke of the day:" +result.joke);
+                    })
             </script>
 
             </li>
