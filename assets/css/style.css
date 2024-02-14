@@ -1054,3 +1054,8 @@ textarea.input-field {
   .hero-banner { width: 275px; }
 
 }
+
+
+.completed {
+    text-decoration: line-through;
+}
