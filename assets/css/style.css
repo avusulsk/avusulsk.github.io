@@ -1063,3 +1063,14 @@ textarea.input-field {
             border: 1px solid black; /* Add black border to the input */
             padding: 5px; /* Add some padding for better appearance */
         }
+#app button {
+            background-color: orange; /* Set button background color to orange */
+            color: white; /* Set text color to white */
+            padding: 8px 16px; /* Add padding */
+            border: none; /* Remove border */
+            cursor: pointer; /* Change cursor to pointer on hover */
+        }
+
+        #app button:hover {
+            background-color: darkorange; /* Darken the color on hover */
+        }
