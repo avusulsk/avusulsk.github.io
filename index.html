@@ -646,7 +646,7 @@
 
                     <li>
                       <h2>Integrate a public API with graphics:</h2>
-                    <!-- <canvas id="backgroundd" width="400" height="100"></canvas> -->
+                    <canvas id="backgroundd" width="400" height="100"></canvas>
 
                    
 
@@ -666,12 +666,12 @@
                         axios.get(apiUrl)
                             .then(response => {
                                 const weatherData = response.data.data[0];
-                                const weatherInfo = `
+                                const weatherInfoo = `
                                     <h2>${weatherData.city_name} Weather</h2>
                                     <p>Temperature: ${weatherData.temp}&deg;C</p>
                                     <p>Description: ${weatherData.weather.description}</p>
                                 `;
-                                document.getElementById('weather-infoo').innerHTML = weatherInfo;
+                                document.getElementById('weather-infoo').innerHTML = weatherInfoo;
                             })
                             .catch(error => {
                                 console.error('Error fetching weather data:', error);
