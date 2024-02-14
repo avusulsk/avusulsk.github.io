@@ -529,19 +529,38 @@
       <section class="section timeline" id="javascriptelements" aria-label="timeline">
         <div class="container">
 
-          <p class="section-subtitle">Timeline</p>
+          <p class="section-subtitle">Task 3:Technical requirements </p>
 
-          <h2 class="h2 section-title">Experience</h2>
+          <h2 class="h2 section-title">Basic JavaScript code </h2>
 
           <ul class="timeline-list">
 
             <li class="timeline-item">
 
-              <h3 class="item-period">Aug, 2023 - Today</h3>
+             <div id="digit-clock"></div>
+             <canvas id="analog-clock" width="150" height="150" style="background-color: #999"></canvas>
+             <script src="https://waph-uc.github.io/clock.js"></script>
 
-              <p class="item-title">Teaching Assistant</p>
+             <script type="text/javaScript">
+             function displayTime(){
+             document.getElementById('digit-clock').innerHTML = "Current time: " + new Date();
+              }
+              setInterval(displayTime,500);
 
-              <p class="item-address">University of Cincinnati, Ohio-US</p>
+               //code for adding the analog code which is called by the canvas TASK-1 Part 2-(4)
+              var canvas= document.getElementById("analog-clock");
+              var ctx = canvas.getContext("2d");
+              var radius = canvas.height / 2;
+              ctx.translate(radius, radius);
+              radius=radius * 0.90
+              setInterval(drawClock,1000);
+
+              function drawClock(){
+                drawFace(ctx, radius);
+                drawNumbers(ctx, radius);
+                drawTime(ctx,radius);
+              }
+              </script>
 
             </li>
 
