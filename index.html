@@ -540,165 +540,165 @@
 
               <h2>Digital Clock and Analog Clock:</h2>
 
-             <div id="digit-clock"></div>
-             <canvas id="analog-clock" width="150" height="150" style="background-color: #999"></canvas>
-             <script src="https://waph-uc.github.io/clock.js"></script>
+              <div id="digit-clock"></div>
+              <canvas id="analog-clock" width="150" height="150" style="background-color: #999"></canvas>
+              <script src="https://waph-uc.github.io/clock.js"></script>
 
-             <script type="text/javaScript">
-             function displayTime(){
-             document.getElementById('digit-clock').innerHTML = "Current time: " + new Date();
-              }
-              setInterval(displayTime,500);
+              <script type="text/javaScript">
+               function displayTime(){
+                 document.getElementById('digit-clock').innerHTML = "Current time: " + new Date();
+               }
+               setInterval(displayTime,500);
 
                //code for adding the analog code which is called by the canvas TASK-1 Part 2-(4)
-              var canvas= document.getElementById("analog-clock");
-              var ctx = canvas.getContext("2d");
-              var radius = canvas.height / 2;
-              ctx.translate(radius, radius);
-              radius=radius * 0.90
-              setInterval(drawClock,1000);
+               var canvas= document.getElementById("analog-clock");
+               var ctx = canvas.getContext("2d");
+               var radius = canvas.height / 2;
+               ctx.translate(radius, radius);
+               radius=radius * 0.90
+               setInterval(drawClock,1000);
 
-              function drawClock(){
+               function drawClock(){
                 drawFace(ctx, radius);
                 drawNumbers(ctx, radius);
                 drawTime(ctx,radius);
               }
-              </script>
+            </script>
 
-            </li>
-<li class="timeline-item">
-            <div id="email" onclick="showhideEmail()">Show my email</div>
- <script src="email.js"></script>
-</div>
-</li>
-
-   <li class="timeline-item">
-    <div id="app">
-        <h2>Vue.js To-Do List</h2>
-        <input type="text" v-model="newTask" @keyup.enter="addTask">
-        <button @click="addTask">Add Task</button>
-
-        <ul>
-            <li v-for="(task, index) in tasks" :key="index">
-                <input type="checkbox" v-model="task.completed"> 
-                <span :class="{ completed: task.completed }">{{ task.text }}</span>
-                <button @click="deleteTask(index)">Delete</button>
-            </li>
-        </ul>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
-    <script type="text/javascript">
-      new Vue({
-    el: '#app',
-    data: {
-        newTask: '',
-        tasks: []
-    },
-    methods: {
-        addTask() {
-            if (this.newTask.trim() !== '') {
-                this.tasks.push({ text: this.newTask, completed: false });
-                this.newTask = '';
-            }
-        },
-        deleteTask(index) {
-            this.tasks.splice(index, 1);
-        }
-    }
-});
-
-    </script>
-   </li>
-
+          </li>
             <li class="timeline-item">
+                        <div id="email" onclick="showhideEmail()">Show my email</div>
+             <script src="email.js"></script>
+            </div>
+            </li>
 
-             <h2>API Programming Joke:</h2>
-                  <div id="joke-container">
-                    <!-- Jokes will be displayed here -->
-                  </div>
+               <li class="timeline-item">
+                <div id="app">
+                    <h2>Vue.js To-Do List</h2>
+                    <input type="text" v-model="newTask" @keyup.enter="addTask">
+                    <button @click="addTask">Add Task</button>
 
-                  <script>
-                    function fetchJoke() {
-        fetch('https://v2.jokeapi.dev/joke/Any') // You can specify the category of joke you prefer instead of 'Any'
-        .then(response => response.json())
-        .then(data => {
-          if (data.type === 'single') {
-            document.getElementById('joke-container').innerText = data.joke;
-          } else if (data.type === 'twopart') {
-            document.getElementById('joke-container').innerHTML = `<p>${data.setup}</p><p>${data.delivery}</p>`;
-          }
-        })
-        .catch(error => {
-          console.error('Error fetching joke:', error);
-        });
-      }
-        // Fetch a joke initially when the page loads
-      fetchJoke();
-        // Fetch a new joke every 1 minute
-      setInterval(fetchJoke, 60000); 
-    </script>
-  </li>
+                    <ul>
+                        <li v-for="(task, index) in tasks" :key="index">
+                            <input type="checkbox" v-model="task.completed"> 
+                            <span :class="{ completed: task.completed }">{{ task.text }}</span>
+                            <button @click="deleteTask(index)">Delete</button>
+                        </li>
+                    </ul>
+                </div>
 
-  <li class="timeline-item">
-    <h2>Integrate a public API with graphics:</h2>
-    <canvas id="background"></canvas>
+                <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+                <script type="text/javascript">
+                  new Vue({
+                el: '#app',
+                data: {
+                    newTask: '',
+                    tasks: []
+                },
+                methods: {
+                    addTask() {
+                        if (this.newTask.trim() !== '') {
+                            this.tasks.push({ text: this.newTask, completed: false });
+                            this.newTask = '';
+                        }
+                    },
+                    deleteTask(index) {
+                        this.tasks.splice(index, 1);
+                    }
+                }
+            });
 
-    <div id="weather-info">
-        <!-- Weather information will be displayed here -->
-    </div>
+                </script>
+               </li>
 
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script>
-      const canvas = document.getElementById('background');
-const ctx = canvas.getContext('2d');
+                        <li class="timeline-item">
 
-// Set canvas dimensions
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+                         <h2>API Programming Joke:</h2>
+                              <div id="joke-container">
+                                <!-- Jokes will be displayed here -->
+                              </div>
 
-// Generate random color for background
-function randomColor() {
-    return Math.floor(Math.random() * 255);
-}
+                              <script>
+                                function fetchJoke() {
+                    fetch('https://v2.jokeapi.dev/joke/Any') // You can specify the category of joke you prefer instead of 'Any'
+                    .then(response => response.json())
+                    .then(data => {
+                      if (data.type === 'single') {
+                        document.getElementById('joke-container').innerText = data.joke;
+                      } else if (data.type === 'twopart') {
+                        document.getElementById('joke-container').innerHTML = `<p>${data.setup}</p><p>${data.delivery}</p>`;
+                      }
+                    })
+                    .catch(error => {
+                      console.error('Error fetching joke:', error);
+                    });
+                  }
+                    // Fetch a joke initially when the page loads
+                  fetchJoke();
+                    // Fetch a new joke every 1 minute
+                  setInterval(fetchJoke, 60000); 
+                </script>
+              </li>
 
-function drawBackground() {
-    // Generate random gradient background
-    const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-    gradient.addColorStop(0, `rgb(${randomColor()}, ${randomColor()}, ${randomColor()})`);
-    gradient.addColorStop(1, `rgb(${randomColor()}, ${randomColor()}, ${randomColor()})`);
+              <li class="timeline-item">
+                <h2>Integrate a public API with graphics:</h2>
+                <!-- <canvas id="background"></canvas>
 
-    ctx.fillStyle = gradient;
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-}
+                <div id="weather-info">
+                   
+                </div>
 
-// Function to fetch weather data from Weatherbit API
-function fetchWeather() {
-    const apiKey = 'YOUR_WEATHERBIT_API_KEY';
-    const city = 'New York'; // Example city, you can change it to any city you want
-    const apiUrl = `https://api.weatherbit.io/v2.0/current?city=${city}&key=${apiKey}`;
+                <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+                <script>
+                  const canvas = document.getElementById('background');
+            const ctx = canvas.getContext('2d');
 
-    axios.get(apiUrl)
-        .then(response => {
-            const weatherData = response.data.data[0];
-            const weatherInfo = `
-                <h2>${weatherData.city_name} Weather</h2>
-                <p>Temperature: ${weatherData.temp}&deg;C</p>
-                <p>Description: ${weatherData.weather.description}</p>
-            `;
-            document.getElementById('weather-info').innerHTML = weatherInfo;
-        })
-        .catch(error => {
-            console.error('Error fetching weather data:', error);
-        });
-}
+            // Set canvas dimensions
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
 
-// Draw background and fetch weather when page loads
-window.onload = function() {
-    drawBackground();
-    fetchWeather();
-};
-    </script>
+            // Generate random color for background
+            function randomColor() {
+                return Math.floor(Math.random() * 255);
+            }
+
+            function drawBackground() {
+                // Generate random gradient background
+                const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+                gradient.addColorStop(0, `rgb(${randomColor()}, ${randomColor()}, ${randomColor()})`);
+                gradient.addColorStop(1, `rgb(${randomColor()}, ${randomColor()}, ${randomColor()})`);
+
+                ctx.fillStyle = gradient;
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+            }
+
+            // Function to fetch weather data from Weatherbit API
+            function fetchWeather() {
+                const apiKey = 'YOUR_WEATHERBIT_API_KEY';
+                const city = 'New York'; // Example city, you can change it to any city you want
+                const apiUrl = `https://api.weatherbit.io/v2.0/current?city=${city}&key=${apiKey}`;
+
+                axios.get(apiUrl)
+                    .then(response => {
+                        const weatherData = response.data.data[0];
+                        const weatherInfo = `
+                            <h2>${weatherData.city_name} Weather</h2>
+                            <p>Temperature: ${weatherData.temp}&deg;C</p>
+                            <p>Description: ${weatherData.weather.description}</p>
+                        `;
+                        document.getElementById('weather-info').innerHTML = weatherInfo;
+                    })
+                    .catch(error => {
+                        console.error('Error fetching weather data:', error);
+                    });
+            }
+
+            // Draw background and fetch weather when page loads
+            window.onload = function() {
+                drawBackground();
+                fetchWeather();
+            };
+                </script> -->
 
   </li>
     <script type="text/javascript">
