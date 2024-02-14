@@ -567,18 +567,50 @@
 
             </li>
 
+
+
+   <li class="timeline-item">
+    <div id="app">
+        <h2>Vue.js To-Do List</h2>
+        <input type="text" v-model="newTask" @keyup.enter="addTask">
+        <button @click="addTask">Add Task</button>
+
+        <ul>
+            <li v-for="(task, index) in tasks" :key="index">
+                <input type="checkbox" v-model="task.completed"> 
+                <span :class="{ completed: task.completed }">{{ task.text }}</span>
+                <button @click="deleteTask(index)">Delete</button>
+            </li>
+        </ul>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script type="text/javascript">
+      new Vue({
+    el: '#app',
+    data: {
+        newTask: '',
+        tasks: []
+    },
+    methods: {
+        addTask() {
+            if (this.newTask.trim() !== '') {
+                this.tasks.push({ text: this.newTask, completed: false });
+                this.newTask = '';
+            }
+        },
+        deleteTask(index) {
+            this.tasks.splice(index, 1);
+        }
+    }
+});
+
+    </script>
+   </li>
+
             <li class="timeline-item">
 
              <h2>API Programming Joke:</h2>
-
-             <!-- <div id="joke-container"></div> -->
-            <!-- <script type="text/javascript">
-                    $.get("https://v2.jokeapi.dev/joke/Programming?type=single",
-                    function(result){
-                      console.log("From jokeAPI: "+ JSON.stringify(result));
-                      $("#response").html("A Programming joke of the day:" +result.joke);
-                    })
-                  </script> -->
                   <div id="joke-container">
                     <!-- Jokes will be displayed here -->
                   </div>
@@ -631,44 +663,6 @@
     </script>
   </li>
 
-   <li class="timeline-item">
-    <div id="app">
-        <h2>Vue.js To-Do List</h2>
-        <input type="text" v-model="newTask" @keyup.enter="addTask">
-        <button @click="addTask">Add Task</button>
-
-        <ul>
-            <li v-for="(task, index) in tasks" :key="index">
-                <input type="checkbox" v-model="task.completed"> 
-                <span :class="{ completed: task.completed }">{{ task.text }}</span>
-                <button @click="deleteTask(index)">Delete</button>
-            </li>
-        </ul>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
-    <script type="text/javascript">
-      new Vue({
-    el: '#app',
-    data: {
-        newTask: '',
-        tasks: []
-    },
-    methods: {
-        addTask() {
-            if (this.newTask.trim() !== '') {
-                this.tasks.push({ text: this.newTask, completed: false });
-                this.newTask = '';
-            }
-        },
-        deleteTask(index) {
-            this.tasks.splice(index, 1);
-        }
-    }
-});
-
-    </script>
-   </li>
 
 </ul>
 
