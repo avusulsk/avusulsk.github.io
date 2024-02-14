@@ -28,7 +28,7 @@
   <!-- 
     - preload images
   -->
-  <link rel="preload" as="image" href="./assets/images/headshot.png">
+  <!-- <link rel="preload" as="image" href="./assets/images/headshot.png"> -->
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-6RPLBMB10X"></script>
 <script>
@@ -572,34 +572,56 @@
              <h2>API Programming Joke:</h2>
 
              <!-- <div id="joke-container"></div> -->
-            <script type="text/javascript">
+            <!-- <script type="text/javascript">
                     $.get("https://v2.jokeapi.dev/joke/Programming?type=single",
                     function(result){
                       console.log("From jokeAPI: "+ JSON.stringify(result));
                       $("#response").html("A Programming joke of the day:" +result.joke);
                     })
+            </script> -->
+             <div id="joke-container">
+        <!-- Jokes will be displayed here -->
+    </div>
+
+    <script>
+        function fetchJoke() {
+        fetch('https://v2.jokeapi.dev/joke/Any') // You can specify the category of joke you prefer instead of 'Any'
+        .then(response => response.json())
+        .then(data => {
+            if (data.type === 'single') {
+                document.getElementById('joke-container').innerText = data.joke;
+            } else if (data.type === 'twopart') {
+                document.getElementById('joke-container').innerHTML = `<p>${data.setup}</p><p>${data.delivery}</p>`;
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching joke:', error);
+        });
+  }
+
+        // Fetch a joke initially when the page loads
+        fetchJoke();
+
+        // Fetch a new joke every 1 minute
+        setInterval(fetchJoke, 60000); 
             </script>
 
-            </li>
+                    </li>
 
-            <li class="timeline-item">
+                    <li class="timeline-item">
 
-             
+                     
 
-            </li>
+                    </li>
 
-          </ul>
+                  </ul>
 
-        </div>
-      </section>
+                </div>
+              </section>
 
-
-
-
-
-  <!-- 
-    - #FOOTER
-  -->
+          <!-- 
+            - #FOOTER
+          -->
 
   <footer class="footer">
     <div class="container">
