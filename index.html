@@ -571,31 +571,19 @@
 
              <h2>API Programming Joke:</h2>
 
-             <div id="joke-container"></div>
+             <!-- <div id="joke-container"></div> -->
             <script type="text/javascript">
-                 function fetchJoke() 
-                 {
-                   fetch('https://v2.jokeapi.dev/joke/Any')
-                     .then(response => response.json())
-                     .then(data => {
-                       const jokeContainer = document.getElementById('joke-container');
-                       if (data.type === 'single') {
-                         jokeContainer.textContent = data.joke;
-                         } else if (data.type === 'twopart') {
-                           jokeContainer.innerHTML = <p>${data.setup}</p><p>${data.delivery}</p>;
-                         }
-                   })
-                  .catch(error => {
-                     console.error('Error fetching joke:', error);
-                   });
-                 }
-
-                 // Fetch joke initially
-                   fetchJoke();
-
-                 // Fetch a new joke every minute
-                 setInterval(fetchJoke, 60000);
-
+                  $.get("https://v2.jokeapi.dev/joke/Programming?type=single",
+                  function(result){
+                    console.log("From jokeAPI: "+ JSON.stringify(result));
+                    $("#response").html("A Programming joke of the day:" +result.joke);
+                      if(result && result.joke){
+                var encodedJoke = encodeInput(result.joke); 
+                    $("#response").text("Programming Joke of the day: "+encodedJoke);
+                  }else{
+                    $("#response").text("unable to retrive joke now sorry!!");
+                  }
+                })
             </script>
 
             </li>
